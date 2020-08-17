@@ -1,0 +1,9 @@
+Class component
+In react we can have functions that returns html but also we can have class that have functions that returns html
+Steps to write a class component
+1. import Component from react 
+2. extends the Component then you can access render method that returns html
+
+Why use class component
+Using class component will give us access to state (State is a javascript object with properties that we can access at any point in our class)
+It also give use access to self state

@@ -1,0 +1,6 @@
+Things to note before starting a project in react 
+1. Decide the components
+2. Decide the state and where it leaves
+3. Decide what happens when state change
+
+React basics
