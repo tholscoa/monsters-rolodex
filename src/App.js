@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import { Component } from 'react'
 
@@ -7,21 +7,54 @@ import { Component } from 'react'
 class App extends Component{
     constructor(){
         super();
-        this.state = {
-            String : "Initial text",
+
+        this.state={ 
+               monsters : [
+                {
+                    name: "Frankenstein",
+                    id: '1'
+                },
+                {
+                    name: "Dracula",
+                    id: '2'
+                },
+                {
+                    name: "Zombie",
+                    id: '3'
+                }
+               ]
         }
     }
 
     render(){
         return(
             <div className='App'>
-                <img src={logo} />
-                { this.state.String } <br/>
-                <button onClick={()=>this.setState({String:"Yes"})}>Change Text</button>
+                {
+                    this.state.monsters.map( monster => <h1 key= {monster.id}> {monster.name } </h1> )
+                }
             </div>
         )
     }
 }
+
+// class App extends Component{
+//     constructor(){
+//         super();
+//         this.state = {
+//             String : "Initial text",
+//         }
+//     }
+
+//     render(){
+//         return(
+//             <div className='App'>
+//                 <img src={logo} />
+//                 { this.state.String } <br/>
+//                 <button onClick={()=>this.setState({String:"You've clicked once"})}>Change Text</button>
+//             </div>
+//         )
+//     }
+// }
 
 // function App() {
 //     return ( <
