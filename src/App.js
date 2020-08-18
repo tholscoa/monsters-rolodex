@@ -3,38 +3,59 @@ import React from 'react';
 import './App.css';
 import { Component } from 'react'
 
-
-class App extends Component{
-    constructor(){
+//another way to import directly
+// class App extends React.Component{
+class App extends Component {
+    constructor() {
         super();
 
-        this.state={ 
-               monsters : [
-                {
-                    name: "Frankenstein",
-                    id: '1'
-                },
-                {
-                    name: "Dracula",
-                    id: '2'
-                },
-                {
-                    name: "Zombie",
-                    id: '3'
-                }
-               ]
+        this.state = {
+            monsters: []
         }
+
+        // this.state={ 
+        //        monsters : [
+        //         {
+        //             name: "Frankenstein",
+        //             id: '1'
+        //         },
+        //         {
+        //             name: "Dracula",
+        //             id: '2'
+        //         },
+        //         {
+        //             name: "Zombie",
+        //             id: '3'
+        //         }
+        //        ]
+        // }
     }
 
+    // fetch monsters using componentDidMount
+
+   componentDidMount(){
+       let typicode = 'https://jsonplaceholder.typicode.com/users';
+       fetch(typicode).then(response=> response.json()).then(data => (this.setState({monsters:data})))
+   }
+
+    
     render(){
         return(
-            <div className='App'>
-                {
-                    this.state.monsters.map( monster => <h1 key= {monster.id}> {monster.name } </h1> )
-                }
+            <div className='root'>
+                {this.state.monsters.map(monster=>(<h1 key={monster.id}>{monster.name}</h1>))} 
             </div>
         )
     }
+
+    // render(){
+    //     return(
+    //         <div className='App'>
+    //             {
+    //                 this.state.monsters.map( monster => <h1 key= {monster.id}> {monster.name } </h1> )
+    //             }
+    //         </div>
+    //     )
+    // }
 }
 
 // class App extends Component{
