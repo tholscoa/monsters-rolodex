@@ -1,6 +1,6 @@
 Fetching content
 Life cycle methods: They are the methods that can be called at differents stages when the component get render example componentDidMount
 Fetching content from an api endpoint
-1.fetch()
-2.then response json
+1. fetch()
+2. then response json
 3. then setState
