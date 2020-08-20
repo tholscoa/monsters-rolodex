@@ -1,0 +1,13 @@
+Card List Component
+create a components folder
+create a card list folder
+create card-list.jsx and card-list.css
+
+card-list.jsx
+import React from 'react'
+export const cardList  
+
+
+Note:
+props are anything we passed into our component e.g <cardList text="text is a props">anything here is a child props</cardList>
+
