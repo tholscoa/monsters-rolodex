@@ -1,0 +1,3 @@
+Adding search box
+- capture the target value
+- use .filter, .includes and .toLowerCase functions
