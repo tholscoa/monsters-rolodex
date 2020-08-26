@@ -12,6 +12,9 @@ class App extends Component{
             monsters: [ ],
             searchMonster: ''
         }
+
+        // added to make this accessible to handleChange method
+        this.handleChange = this.handleChange.bind(this)
     }
 
     componentDidMount(){
@@ -20,13 +23,20 @@ class App extends Component{
         .then(data => (this.setState({monsters:data})))
     }
 
+    handleChange(e){
+        this.setState({searchMonster: e.target.value})
+    }
+    // this will work without first binding handleChange to this
+    // handleChange = (e) => {
+    //     this.setState({searchMonster: e.target.value})
+    // }
     render(){
         const { monsters, searchMonster } = this.state;
         const filterMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchMonster.toLowerCase()))
 
         return(
             <div className='App'>
-                <SearchBox placeholder= 'Search' handleOnChange= { e => (this.setState({SearchMonster: e.target.value}))} />
+                <SearchBox placeholder= 'Search' handleOnChange= { this.handleChange } />
                 {/* <input type='search' placeholder= "Search Monster" onChange={ e => (this.setState({ searchMonster: e.target.value }))} /> */}
                 <CardList monsters= { filterMonsters } /> 
             </div>

@@ -1,0 +1,2 @@
+class method and arrow function
+when we write our own class method, this component is not automatically bind. We need to bind them manually
