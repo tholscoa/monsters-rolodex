@@ -14,13 +14,27 @@ class App extends Component{
         }
 
         // added to make this accessible to handleChange method
-        this.handleChange = this.handleChange.bind(this)
+        this.handleChange = this.handleChange.bind(this);
+
+        this.testFunction2 = this.testFunction1.bind(this);
     }
 
     componentDidMount(){
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
         .then(data => (this.setState({monsters:data})))
+    }
+
+
+    testFunction1(){
+        console.log('Clicked 1 or 2')
+    }
+
+    testFunction3(){
+        console.log('Clicked 3')
+    }
+    testFunction4(){
+        console.log('Clicked 4')
     }
 
     handleChange(e){
@@ -36,10 +50,17 @@ class App extends Component{
 
         return(
             <div className='App'>
+
+                <button onClick={this.testFunction1()}>Click 1</button>
+                <button onClick={this.testFunction2}>Click 2</button>
+                <button onClick={this.testFunction3}>Click 3</button>
+                <button onClick={this.testFunction4}>Click 4</button>
+
                 <SearchBox placeholder= 'Search' handleOnChange= { this.handleChange } />
                 {/* <input type='search' placeholder= "Search Monster" onChange={ e => (this.setState({ searchMonster: e.target.value }))} /> */}
                 <CardList monsters= { filterMonsters } /> 
             </div>
+
         )
     }
 
