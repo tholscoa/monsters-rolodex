@@ -1,0 +1,6 @@
+hosting application to github
+-add the following to package.json
+  "homepage":'username.github.io/project_name'
+  "predeploy": 'yarn build'
+  "deploy": 'gh-pages -d build'
+ 
